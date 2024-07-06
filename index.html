@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-PROBLEMS-unique No./factorial</title>
+    <style>
+        h2,
+        h3 {
+            text-align: center;
+        }
+
+        pre {
+            margin: auto;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 73%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>---------- PROMPT OUTPUTS ----------</h2>
+    <script src="./task.js">
+    </script>
+    <h2>Source code :</h2>
+    <pre>
+        <h3>Write a program to print true if the number is unique else print false if it contains duplicates
+            input: 1211   output: False
+            input: 453    output: True</h3>
+            var num = prompt("Enter a number : ");
+            var count = 0;
+            for (let i = 0; i < num.length; i++) {
+                for (var j = 0; j < num.length; j++) {
+                    if (num[i] == num[j] && i != j) {
+                        count = 1;
+                    }
+                }
+            }
+            if (count >= 1) {
+                console.log(false);
+                document.write(`false`);
+            }
+            else {
+                console.log(true);
+                document.write(`true`);
+            }
+            
+            <h3>Method - 2</h3>
+            var num = prompt("Enter a number : ");
+            var unique = true;
+            
+            for (let i = 0; i < num.length; i++) {
+                for (let j = i + 1; j < num.length; j++) {
+                    if (num[i] === num[j]) {
+                        unique = false;
+                        break;
+                    }
+                }
+                if (!unique) {
+                    break;
+                }
+            }
+            console.log(unique);
+            document.write(`${unique}`);
+        <h3>Write a program to print the below expression for the given number (Factorial)
+            input: 5  output:5*4*3*2*1=120</h3>
+            //Factorial of a number in reverse order
+            var num = prompt("Enter a number to print factorial(reverse) : ");
+            var p = 1;
+            var res = "";
+            for (let i = num; i >= 1; i--) {
+                p *= i;
+                if (i == 1)
+                    res += i + "=";
+                else
+                    res += i + "*"
+            }
+            console.log(`Factorial of (${num}) in reverse order is : ${res + p}`);
+            document.write(`Factorial of (${num}) in reverse order is : ${res + p}`);
+            
+            <h3>Method - 2</h3>
+            var num = prompt("Enter a number to print factorial(reverse) : ");
+            var p = 1;
+            var res = "";
+            for (let i = 1; i <= num; i++) {
+                p *= i;
+                res += i;
+            }
+            console.log(`Factorial of (${num}) in reverse order is : ${result} = ${p}`);
+            document.write(`Factorial of (${num}) in reverse order is : ${result} = ${p}`);
+
+    </pre>
+</body>
+
+</html>
